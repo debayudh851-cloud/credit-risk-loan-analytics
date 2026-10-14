@@ -1,0 +1,18 @@
+services:
+  postgres:
+    image: postgres:18
+    environment:
+      POSTGRES_USER: credora
+      POSTGRES_DB: credora
+      POSTGRES_HOST_AUTH_METHOD: trust
+    ports:
+      - "127.0.0.1:6543:5432"
+    volumes:
+      - credora_pg:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U credora -d credora"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+volumes:
+  credora_pg:

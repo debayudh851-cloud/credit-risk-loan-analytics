@@ -1,0 +1,16 @@
+datasets/
+*.csv
+!tests/fixtures/*.csv
+PRD_Credit_Risk_Platform.docx
+credit_risk_platform.sql
+.venv/
+__pycache__/
+.pytest_cache/
+.ipynb_checkpoints/
+.env
+.local/
+artifacts/
+models/*.pkl
+models/*.joblib
+documentation/PRD.docx
+*.log
